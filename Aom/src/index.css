@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #0A0F1E;
+    color: #EFF4FF;
+    font-family: 'Noto Sans Thai', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  .glass-card-hover {
+    @apply glass-card transition-all duration-200;
+  }
+  .glass-card-hover:hover {
+    border-color: rgba(245, 200, 66, 0.3);
+    box-shadow: 0 8px 32px rgba(245, 200, 66, 0.1);
+    transform: translateY(-2px);
+  }
+  .btn-gold {
+    @apply bg-accent-gold text-bg-primary font-heading font-bold px-6 py-3 rounded-xl transition-all duration-200 hover:brightness-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-outline {
+    @apply border border-accent-gold text-accent-gold font-heading font-bold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-accent-gold hover:text-bg-primary active:scale-95 disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply text-text-muted hover:text-text-primary px-4 py-2 rounded-lg transition-colors duration-200;
+  }
+  .input-field {
+    @apply w-full bg-bg-tertiary border border-white/10 rounded-xl px-4 py-3 text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-gold/50 focus:ring-1 focus:ring-accent-gold/30 transition-all duration-200;
+  }
+  .badge { @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium; }
+  .badge-gold { @apply badge bg-accent-gold/20 text-accent-gold border border-accent-gold/30; }
+  .badge-green { @apply badge bg-accent-green/20 text-accent-green border border-accent-green/30; }
+  .badge-red { @apply badge bg-accent-red/20 text-accent-red border border-accent-red/30; }
+  .badge-blue { @apply badge bg-accent-blue/20 text-accent-blue border border-accent-blue/30; }
+  .skeleton { @apply bg-white/5 animate-pulse rounded-lg; }
+  .nav-link { @apply text-text-muted hover:text-text-primary transition-colors duration-200 font-medium text-sm; }
+  .nav-link-active { @apply text-accent-gold font-semibold; }
+  .section-title { @apply font-heading text-xl font-bold text-text-primary; }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 4px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+}
